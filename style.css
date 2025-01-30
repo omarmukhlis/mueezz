@@ -1,0 +1,238 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #000; /* Hitam */
+    color: #fff;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.8rem;
+    color: #00ffcc;
+    transition: transform 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+/* Navbar Links */
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00ffcc;
+    transform: translateY(-2px);
+}
+
+/* Mobile Navigation */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Login Form */
+.login-form {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.top-login {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.top-login input {
+    padding: 0.5rem;
+    border: 1px solid #00ffcc;
+    border-radius: 4px;
+    font-size: 1rem;
+    background: transparent;
+    color: white;
+}
+
+.top-login button {
+    padding: 0.6rem 1.2rem;
+    background-color: #00ffcc;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.top-login button:hover {
+    background-color: #00997a;
+    transform: scale(1.1);
+}
+
+/* Main Content */
+main {
+    margin-top: 100px;
+    padding: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.content-section {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease-in-out;
+}
+
+.content-section:hover {
+    transform: translateY(-5px);
+}
+
+.content-section h2 {
+    color: #00ffcc;
+    margin-bottom: 1rem;
+}
+
+.content-section p {
+    line-height: 1.6;
+    color: #ddd;
+}
+
+/* Animasi Scroll */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content-section {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .nav-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .top-login input {
+        width: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 1rem 0;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 10px;
+        font-size: 1.2rem;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .login-form {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .top-login {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .top-login input {
+        width: 80%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .content-section {
+        padding: 1.5rem;
+    }
+
+    .top-login input,
+    .top-login button {
+        width: 100%;
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+}
